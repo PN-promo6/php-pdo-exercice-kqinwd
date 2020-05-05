@@ -17,6 +17,11 @@ switch ($action) {
     include "../models/PostManager.php";
     $posts = GetAllPosts();
 
+    if (isset($_GET["query"])) {
+      $query = $_GET["query"];
+      $posts = GetPostsContentLike($query);
+    }
+
     include "../models/CommentManager.php";
     $comments = array();
     foreach ($posts as $onePost) {

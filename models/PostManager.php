@@ -25,3 +25,15 @@ function GetAllPostsFromUserId($userId)
   $response = $PDO->query("SELECT * FROM post WHERE user_id = " . $userId . " ORDER BY created_at DESC");
   return $response->fetchAll();
 }
+
+function GetPostsContentLike($query)
+{
+  global $PDO;
+  $response = $PDO->query(
+    "SELECT post.*, user.nickname "
+      . "FROM post LEFT JOIN user on (post.user_id = user.id) "
+      . "WHERE post.content LIKE '%$query%' "
+      . "ORDER BY post.created_at DESC"
+  );
+  return $response->fetchAll();
+}
