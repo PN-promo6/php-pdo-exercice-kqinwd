@@ -26,7 +26,7 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#" role="button">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="?action=login" role="button">Login</a></li>
         <li class="nav-item"><a class="nav-link" href="#" role="button">Sign Up</a></li>
       </ul>
       <form method="GET" class="form-inline my-2 my-lg-0">
